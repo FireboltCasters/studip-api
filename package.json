@@ -1,7 +1,7 @@
 {
-  "name": "@fireboltcasters/<packageName>",
+  "name": "studip-api",
   "version": "0.0.1",
-  "description": "<packageDescription>",
+  "description": "This small package is not from the creators of Stud.IP. Instead it only offers limited functions for the Stud.IP API.",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -23,29 +23,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FireboltCasters/npm-template.git"
+    "url": "git+https://github.com/FireboltCasters/studip-api"
   },
   "keywords": [
-    "npm-template"
+    "studip",
+    "api",
+    "auth",
+    "connect"
   ],
-  "author": "Steffen Droppelmann",
+  "author": "Nils Baumgartner",
   "contributors": [
     {
       "name": "Nils Baumgartner",
       "email": "nilsbaumgartner1994@gmail.com",
-      "url": "https://github.com/FireboltCasters"
-    },
-    {
-      "name": "Steffen Droppelmann",
-      "email": "steffen.droppelmann@gmail.com",
-      "url": "https://github.com/FireboltCasters"
+      "url": "https://github.com/NilsBaumgartner1994"
     }
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FireboltCasters/npm-template/issues"
+    "url": "https://github.com/FireboltCasters/studip-api/issues"
   },
-  "homepage": "https://github.com/FireboltCasters/npm-template#readme",
+  "homepage": "https://github.com/FireboltCasters/studip-api#readme",
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^16.0.0",
