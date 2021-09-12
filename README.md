@@ -37,51 +37,45 @@
 
 ## About
 
-A template for creating npm packages
+This package should help to communicate with a specific Stud.IP instance. Please not the disclaimer on the bottom.
 
-## How to setup your project
+## Installation
 
-First and most importantly, edit the setup.json file to match your project:
+
+```
+npm i studip-api
+```
+
+## Usage example
 
 ```javascript
-{
-  "package": {
-    "name": "<studip-api>",
-    "description": "<packageDescription>",
-    "keywords": [
-      "npm-template"
-    ],
-    "repositoryURL": "https://github.com/FireboltCasters/npm-template.git",
-    "author": "Steffen Droppelmann",
-    "contributors": [
-      {
-        "name": "Nils Baumgartner",
-        "email": "nilsbaumgartner1994@gmail.com",
-        "url": "https://github.com/FireboltCasters"
-      },
-      {
-        "name": "Steffen Droppelmann",
-        "email": "steffen.droppelmann@gmail.com",
-        "url": "https://github.com/FireboltCasters"
-      }
-    ],
-    "license": "MIT"
-  },
-  "sonar": {
-    "projectKey": "ExampleKey",
-    "FireboltCasters": "ExampleOrganization"
-  }
+
+import {Client} from "studip-api";
+
+async function userLogin(){
+    const domain = "https://<yourStudIP_Domain>.de"
+    const username = "<username>";
+    const password = "<password>";
+    
+    try{
+        const client = await Connector.getClient(domain, username, password);
+        
+        // to get user informations
+        const user = client.getUser();
+
+        // to get the current schedule
+        const schedule = await client.loadSchedule();
+    } catch (err){
+        console.log("incorrect password or other error");
+    }
 }
-```
-
-Then, run the following command:
-(Note: After running this command, the setup files will be deleted)
 
 ```
-npm run setup
-```
 
-Thats it, everything should work now.
+## Disclaimer
+
+This project is not officialy associated in any form with the Stud.IP product and does not claims to be part of the development. 
+
 
 ## Contributors
 
