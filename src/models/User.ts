@@ -1,5 +1,4 @@
-import Perm from "./Perm";
-
+import Perm from './Perm';
 
 export default class User {
   // required
@@ -22,9 +21,9 @@ export default class User {
     this.setKeys(studipJson);
   }
 
-  private setKeys(studipJson: any){
+  private setKeys(studipJson: any) {
     let keys = Object.keys(studipJson);
-    for(let key of keys){
+    for (let key of keys) {
       // @ts-ignore
       this[key] = studipJson[key];
     }

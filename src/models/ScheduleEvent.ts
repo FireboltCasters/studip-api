@@ -13,9 +13,9 @@ export default class ScheduleEvent {
     this.setKeys(eventJson);
   }
 
-  private setKeys(eventJson: any){
+  private setKeys(eventJson: any) {
     let keys = Object.keys(eventJson);
-    for(let key of keys){
+    for (let key of keys) {
       // @ts-ignore
       this[key] = eventJson[key];
     }

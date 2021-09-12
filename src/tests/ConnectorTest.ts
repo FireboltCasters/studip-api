@@ -1,9 +1,9 @@
 import Connector from '../Connector';
 import FakeBackend from '../ignoreCoverage/FakeBackend';
-import UrlHelper from "../UrlHelper";
+import UrlHelper from '../UrlHelper';
 
-const username: string = "xmuster";
-const password: string = "password";
+const username: string = 'xmuster';
+const password: string = 'password';
 const domain: string = UrlHelper.STUDIP_DOMAIN_UNI_OSNABRUECK;
 
 test('Test get User', async () => {
@@ -12,7 +12,7 @@ test('Test get User', async () => {
   const client = await Connector.getClient(domain, username, password);
   const user = client.getUser();
 
-  expect(user).toBeTruthy()
+  expect(user).toBeTruthy();
 
   let rawUser = FakeBackend.getRawExampleUser();
   expect(user.user_id).toBe(rawUser.user_id);
