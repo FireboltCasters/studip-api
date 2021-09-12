@@ -1,5 +1,3 @@
-import Connector from '../Connector';
-import FakeBackend from '../ignoreCoverage/FakeBackend';
 import Base64Helper from '../Base64Helper';
 
 const correctString: string = 'ThisIsATestString';
