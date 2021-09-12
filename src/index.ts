@@ -1,4 +1,12 @@
 /* istanbul ignore file */
-import Example from './Example';
+import Connector from './Connector';
+import UrlHelper from "./UrlHelper";
+import Perm from "./models/Perm";
+import User from "./models/User";
+import ScheduleEvent from "./models/ScheduleEvent";
 
-export {Example};
+export {Connector};
+export {UrlHelper};
+export {Perm};
+export {User};
+export {ScheduleEvent};
