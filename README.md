@@ -37,7 +37,9 @@
 
 ## About
 
-This package should help to communicate with a specific Stud.IP instance. Please not the disclaimer on the bottom.
+This package should help to communicate with a specific Stud.IP instance by using its REST-API. Please not the disclaimer on the bottom. Please note, that oAuth is a better form for authentification but due to restrictions to obtain the specific secrets this is some sort of workaround.
+
+A full documentation of the official Stud.IP instance can be found here: http://docs.studip.de/develop/Entwickler/RESTAPI
 
 ## Installation
 
