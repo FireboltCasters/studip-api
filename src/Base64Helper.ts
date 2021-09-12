@@ -9,5 +9,4 @@ export default class Base64Helper {
     let buff = Buffer.from(string, 'base64');
     return buff.toString('ascii');
   }
-
 }

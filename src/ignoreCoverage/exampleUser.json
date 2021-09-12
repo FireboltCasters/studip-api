@@ -1,25 +1,25 @@
 {
-  "user_id" : "76ed43ef286fb55cf9e41beadb484a9f",
-  "username" : "root@studip",
-  "perms" : "root",
-  "email" : "root@localhost",
-  "name" : {
-    "family" : "Studip",
-    "given" : "Root",
-    "formatted" : "Root Studip",
-    "prefix" : "",
-    "username" : "root@studip",
-    "suffix" : ""
+  "user_id": "76ed43ef286fb55cf9e41beadb484a9f",
+  "username": "root@studip",
+  "perms": "root",
+  "email": "root@localhost",
+  "name": {
+    "family": "Studip",
+    "given": "Root",
+    "formatted": "Root Studip",
+    "prefix": "",
+    "username": "root@studip",
+    "suffix": ""
   },
-  "avatar_small" : "https://studip.example.org/pictures/user/nobody_small.png?d=1476444962",
-  "avatar_normal" : "https://studip.example.org/pictures/user/nobody_normal.png?d=1476444962",
-  "avatar_medium" : "https://studip.example.org/pictures/user/nobody_medium.png?d=1476444962",
-  "avatar_original" : "https://studip.example.org/pictures/user/nobody_original.png?d=0",
+  "avatar_small": "https://studip.example.org/pictures/user/nobody_small.png?d=1476444962",
+  "avatar_normal": "https://studip.example.org/pictures/user/nobody_normal.png?d=1476444962",
+  "avatar_medium": "https://studip.example.org/pictures/user/nobody_medium.png?d=1476444962",
+  "avatar_original": "https://studip.example.org/pictures/user/nobody_original.png?d=0",
 
-  "homepage" : "",
-  "privadr" : "",
-  "phone" : "",
-  "skype" : "",
-  "datafields" : [],
-  "skype_show" : null
+  "homepage": "",
+  "privadr": "",
+  "phone": "",
+  "skype": "",
+  "datafields": [],
+  "skype_show": null
 }

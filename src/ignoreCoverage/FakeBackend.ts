@@ -1,7 +1,7 @@
 'use strict';
-import exampleUser from "./exampleUser.json";
-import exampleScheduleRaw from "./exampleScheduleRaw.json";
-import exampleSchedule from "./exampleSchedule.json";
+import exampleUser from './exampleUser.json';
+import exampleScheduleRaw from './exampleScheduleRaw.json';
+import exampleSchedule from './exampleSchedule.json';
 
 /**
  * FakeBackend class
@@ -11,16 +11,15 @@ import exampleSchedule from "./exampleSchedule.json";
 export default class FakeBackend {
   static IS_ACTIVE = false;
 
-  static getRawExampleUser(){
+  static getRawExampleUser() {
     return exampleUser;
   }
 
-  static getRawExampleSchedule(){
+  static getRawExampleSchedule() {
     return exampleScheduleRaw;
   }
 
-  static getParsedExampleSchedule(){
+  static getParsedExampleSchedule() {
     return exampleSchedule;
   }
-
 }

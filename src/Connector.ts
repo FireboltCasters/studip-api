@@ -1,8 +1,8 @@
-import Base64Helper from "./Base64Helper";
-import UrlHelper from "./UrlHelper";
-import User from "./models/User";
-import ScheduleLoader from "./ScheduleLoader";
-import FetchHelper from "./ignoreCoverage/FetchHelper";
+import Base64Helper from './Base64Helper';
+import UrlHelper from './UrlHelper';
+import User from './models/User';
+import ScheduleLoader from './ScheduleLoader';
+import FetchHelper from './ignoreCoverage/FetchHelper';
 
 export default class Connector {
   private readonly username: string;
@@ -15,8 +15,12 @@ export default class Connector {
     this.password = password;
   }
 
-  static async getClient(studIpDomain: string, username: string, password: string): Promise<Connector>{
-    if(!(UrlHelper.STUDIP_DOMAIN)){
+  static async getClient(
+    studIpDomain: string,
+    username: string,
+    password: string
+  ): Promise<Connector> {
+    if (!UrlHelper.STUDIP_DOMAIN) {
       UrlHelper.STUDIP_DOMAIN = studIpDomain;
     }
     const client = new Connector(username, password);
@@ -24,35 +28,37 @@ export default class Connector {
     return client;
   }
 
-  getUser(): User{
+  getUser(): User {
     return this.user;
   }
 
-  private async login(){
+  private async login() {
     this.user = await this.loadUser();
   }
 
-  async loadUserRaw(): Promise<any>{
+  async loadUserRaw(): Promise<any> {
     const url = UrlHelper.getUserURL();
     const headers = this.getHeaders();
     let answer = await FetchHelper.getUser(url, headers);
     return answer.data;
   }
 
-  private async loadUser(): Promise<User>{
+  private async loadUser(): Promise<User> {
     const data = await this.loadUserRaw();
     return new User(data);
   }
 
-  getHeaders(){
-    let token: string = Base64Helper.toBase64(this.username + ":" + this.password);
+  getHeaders() {
+    let token: string = Base64Helper.toBase64(
+      this.username + ':' + this.password
+    );
     return {
       'Content-Type': 'text/json',
-      Authorization: 'Basic ' + token //the token is a variable which holds the token
-    }
+      Authorization: 'Basic ' + token, //the token is a variable which holds the token
+    };
   }
 
-  async loadScheduleRaw(): Promise<any>{
+  async loadScheduleRaw(): Promise<any> {
     const user = this.getUser();
     const url = UrlHelper.getScheduleURL(user.user_id);
     const headers = this.getHeaders();
@@ -60,7 +66,7 @@ export default class Connector {
     return answer.data;
   }
 
-  async loadSchedule(){
+  async loadSchedule() {
     let data = await this.loadScheduleRaw();
     return ScheduleLoader.parseStudIPEventstoTimetableEvents(data);
   }
