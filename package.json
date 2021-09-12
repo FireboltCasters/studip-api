@@ -45,7 +45,6 @@
   },
   "homepage": "https://github.com/FireboltCasters/studip-api#readme",
   "devDependencies": {
-    "@types/base-64": "^1.0.0",
     "@types/jest": "^26.0.23",
     "@types/node": "^16.0.0",
     "gts": "^3.1.0",
