@@ -1,6 +1,6 @@
 {
   "name": "studip-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This small package is not from the creators of Stud.IP. Instead it only offers limited functions for the Stud.IP API.",
   "main": "index.js",
   "types": "index.d.ts",
