@@ -43,7 +43,6 @@ A full documentation of the official Stud.IP instance can be found here: http://
 
 ## Installation
 
-
 ```
 npm i studip-api
 ```
@@ -51,33 +50,30 @@ npm i studip-api
 ## Usage example
 
 ```javascript
+import {Client} from 'studip-api';
 
-import {Client} from "studip-api";
+async function userLogin() {
+  const domain = 'https://<yourStudIP_Domain>.de';
+  const username = '<username>';
+  const password = '<password>';
 
-async function userLogin(){
-    const domain = "https://<yourStudIP_Domain>.de"
-    const username = "<username>";
-    const password = "<password>";
-    
-    try{
-        const client = await Connector.getClient(domain, username, password);
-        
-        // to get user informations
-        const user = client.getUser();
+  try {
+    const client = await Connector.getClient(domain, username, password);
 
-        // to get the current schedule
-        const schedule = await client.loadSchedule();
-    } catch (err){
-        console.log("incorrect password or other error");
-    }
+    // to get user informations
+    const user = client.getUser();
+
+    // to get the current schedule
+    const schedule = await client.loadSchedule();
+  } catch (err) {
+    console.log('incorrect password or other error');
+  }
 }
-
 ```
 
 ## Disclaimer
 
-This project is not officialy associated in any form with the Stud.IP product and does not claims to be part of the development. 
-
+This project is not officialy associated in any form with the Stud.IP product and does not claims to be part of the development.
 
 ## Contributors
 
