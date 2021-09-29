@@ -15,6 +15,12 @@ export default class FakeBackend {
     return exampleUser;
   }
 
+  static getMainentanceError(){
+    return {
+      data: '<!DOCTYPE html>\nStud.IP ist zur Zeit wegen Wartungsarbeiten nicht verf&uuml;gbar\\'
+    };
+  }
+
   static getRawExampleSchedule() {
     return exampleScheduleRaw;
   }

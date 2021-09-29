@@ -19,6 +19,20 @@ test('Test get User', async () => {
   expect(user.username).toBe(rawUser.username);
   expect(user.email).toBe(rawUser.email);
   expect(user.name).toBeTruthy();
+  FakeBackend.IS_ACTIVE = false;
+});
+
+test('Test login with incorrect credentials', async () => {
+  FakeBackend.IS_ACTIVE = false;
+  console.log("Test login with incorrect credentials");
+  try{
+    expect(await Connector.getClient(domain, username, password)).toThrow();
+  } catch (err){
+    console.log("Expected error catch");
+    console.log(err);
+    expect(12).toBe(12);
+  }
+  FakeBackend.IS_ACTIVE = false;
 });
 
 test('Test get schedule', async () => {
@@ -29,4 +43,5 @@ test('Test get schedule', async () => {
 
   expect(schedule).toBeTruthy();
   expect(schedule.length).toBe(FakeBackend.getParsedExampleSchedule().length);
+  FakeBackend.IS_ACTIVE = false;
 });

@@ -5,6 +5,9 @@ import ScheduleLoader from './ScheduleLoader';
 import FetchHelper from './ignoreCoverage/FetchHelper';
 
 export default class Connector {
+
+  static ERROR_MAINTENANCE = "Wartungsarbeiten";
+
   private readonly username: string;
   private readonly password: string;
   // @ts-ignore //since we can only the the client when user is found, it cant be undefined
@@ -40,7 +43,15 @@ export default class Connector {
     const url = UrlHelper.getUserURL();
     const headers = this.getHeaders();
     let answer = await FetchHelper.getUser(url, headers);
+    this.checkIfErrorLoadingUserRaw(answer)
     return answer.data;
+  }
+
+  checkIfErrorLoadingUserRaw(answer: any){
+    let data = answer.data;
+    if(typeof(data)==="string" && data.includes("Wartungsarbeiten")){
+      throw new Error(Connector.ERROR_MAINTENANCE);
+    }
   }
 
   private async loadUser(): Promise<User> {
