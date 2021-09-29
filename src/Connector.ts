@@ -5,8 +5,7 @@ import ScheduleLoader from './ignoreCoverage/ScheduleLoader';
 import FetchHelper from './ignoreCoverage/FetchHelper';
 
 export default class Connector {
-
-  static ERROR_MAINTENANCE = "Wartungsarbeiten";
+  static ERROR_MAINTENANCE = 'Wartungsarbeiten';
 
   private readonly username: string;
   private readonly password: string;
@@ -43,13 +42,13 @@ export default class Connector {
     const url = UrlHelper.getUserURL();
     const headers = this.getHeaders();
     let answer = await FetchHelper.getUser(url, headers);
-    this.checkIfErrorLoadingUserRaw(answer)
+    this.checkIfErrorLoadingUserRaw(answer);
     return answer.data;
   }
 
-  checkIfErrorLoadingUserRaw(answer: any){
+  checkIfErrorLoadingUserRaw(answer: any) {
     let data = answer.data;
-    if(typeof(data)==="string" && data.includes("Wartungsarbeiten")){
+    if (typeof data === 'string' && data.includes('Wartungsarbeiten')) {
       throw new Error(Connector.ERROR_MAINTENANCE);
     }
   }

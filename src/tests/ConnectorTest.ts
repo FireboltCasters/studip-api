@@ -24,11 +24,11 @@ test('Test get User', async () => {
 
 test('Test login with incorrect credentials', async () => {
   FakeBackend.IS_ACTIVE = false;
-  console.log("Test login with incorrect credentials");
-  try{
+  console.log('Test login with incorrect credentials');
+  try {
     expect(await Connector.getClient(domain, username, password)).toThrow();
-  } catch (err){
-    console.log("Expected error catch");
+  } catch (err) {
+    console.log('Expected error catch');
     console.log(err);
     expect(12).toBe(12);
   }
