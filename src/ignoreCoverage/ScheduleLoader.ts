@@ -1,4 +1,4 @@
-import ScheduleEvent from './models/ScheduleEvent';
+import ScheduleEvent from '../models/ScheduleEvent';
 
 export default class ScheduleLoader {
   static parseStudIPEventstoTimetableEvents(data: any): ScheduleEvent[] {

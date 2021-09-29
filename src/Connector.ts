@@ -1,7 +1,7 @@
 import Base64Helper from './Base64Helper';
 import UrlHelper from './UrlHelper';
 import User from './models/User';
-import ScheduleLoader from './ScheduleLoader';
+import ScheduleLoader from './ignoreCoverage/ScheduleLoader';
 import FetchHelper from './ignoreCoverage/FetchHelper';
 
 export default class Connector {
