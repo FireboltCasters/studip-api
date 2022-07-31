@@ -1,13 +1,11 @@
-const Buffer = require('buffer/').Buffer
+const base64 = require('Base64');
 
 export default class Base64Helper {
   static toBase64(string: string) {
-    let buff = Buffer.from(string);
-    return buff.toString('base64');
+    return base64.btoa(string);
   }
 
   static fromBase64(string: string) {
-    let buff = Buffer.from(string, 'base64');
-    return buff.toString('ascii');
+    return base64.atob(string);
   }
 }

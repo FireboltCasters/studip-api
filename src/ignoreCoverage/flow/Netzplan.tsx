@@ -20,8 +20,10 @@ export const Netzplan : FunctionComponent = (props) => {
         document.title = "Stud.IP-Api Demo"
     }, [])
 
+    const testDomain = "https://cors-anywhere.herokuapp.com/"+domain;
+
     async function login(){
-        const client = await Connector.getClient(domain, username, password);
+        const client = await Connector.getClient(testDomain, username, password);
         const user = client.getUser();
         //@ts-ignore
         setUser(user);
