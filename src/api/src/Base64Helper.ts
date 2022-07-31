@@ -1,3 +1,5 @@
+const Buffer = require('buffer/').Buffer
+
 export default class Base64Helper {
   static toBase64(string: string) {
     let buff = Buffer.from(string);
