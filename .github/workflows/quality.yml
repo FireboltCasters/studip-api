@@ -2,33 +2,10 @@ name: Check
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  run-linters:
-    name: Run linters
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-
-      # ESLint and Prettier must be in `package.json`
-      - name: Install Node.js dependencies
-        run: npm ci
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v1
-        with:
-          auto_fix: true
-          eslint: true
-          prettier: true
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
@@ -43,10 +20,10 @@ jobs:
           node-version: 12
 
       - name: Install Node.js dependencies
-        run: npm ci
+        run: cd ./src/api && npm ci
 
       - name: Test
-        run: npm run testOnly
+        run: cd ./src/api && npm run testOnly
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master

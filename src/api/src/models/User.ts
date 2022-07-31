@@ -6,6 +6,7 @@ export default class User {
   username!: string;
   perms!: Perm;
   email!: string;
+  profile!: any;
   name!: any;
   // optional
   avatar_small: string | undefined;
