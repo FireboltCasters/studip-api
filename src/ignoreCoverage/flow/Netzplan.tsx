@@ -17,7 +17,8 @@ export const Netzplan : FunctionComponent = (props) => {
 
     const default_domain: string = UrlHelper.STUDIP_DOMAIN_UNI_OSNABRUECK;
     const current_domain: string = window.location.hostname;
-    const isDev = current_domain === "localhost" || current_domain === "127.0.0.1";
+    let isDev = current_domain === "localhost" || current_domain === "127.0.0.1";
+    isDev = true;
 
     const [domain, setDomain] = useState(default_domain);
     const [isLoading, setIsLoading] = useState(false);
