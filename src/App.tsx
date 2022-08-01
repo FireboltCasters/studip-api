@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css";
-import {Netzplan} from "./ignoreCoverage/flow/Netzplan";
+import {Demo} from "./ignoreCoverage/flow/Demo";
 
 export interface NetzplanInterface{
   setNodeDuration: any,
@@ -23,7 +23,7 @@ export default class App extends React.Component<any, any> {
 
   render(){
     return (
-        <Netzplan />
+        <Demo />
     );
   }
 }
