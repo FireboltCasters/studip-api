@@ -2,7 +2,7 @@
   "user_id": "76ed43ef286fb55cf9e41beadb484a9f",
   "username": "root",
   "perms": "root",
-  "email": "root@localhost",
+  "email": "root@example.org",
   "name": {
     "family": "Studip",
     "given": "Root",

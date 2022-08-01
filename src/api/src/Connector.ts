@@ -22,9 +22,7 @@ export default class Connector {
     username: string,
     password: string
   ): Promise<Connector> {
-    if (!UrlHelper.STUDIP_DOMAIN) {
-      UrlHelper.STUDIP_DOMAIN = studIpDomain;
-    }
+    UrlHelper.STUDIP_DOMAIN = studIpDomain;
     const client = new Connector(username, password);
     await client.login();
     return client;
@@ -43,7 +41,7 @@ export default class Connector {
     const headers = this.getHeaders();
     let answer = await FetchHelper.getUser(url, headers);
     this.checkIfErrorLoadingUserRaw(answer);
-    return answer.data;
+    return answer?.data;
   }
 
   checkIfErrorLoadingUserRaw(answer: any) {
@@ -73,7 +71,7 @@ export default class Connector {
     const url = UrlHelper.getScheduleURL(user.user_id);
     const headers = this.getHeaders();
     let answer = await FetchHelper.getScheduleRaw(url, headers);
-    return answer.data;
+    return answer?.data;
   }
 
   async loadSchedule() {
