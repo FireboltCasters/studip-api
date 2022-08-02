@@ -154,6 +154,11 @@ export const Demo : FunctionComponent = (props) => {
                                         <ScheduleOutput handleLoad={handleLoad} username={username} password={password} domainToUse={domainToUse} />
                                     </div>
                                 </TabPanel>
+                                <TabPanel header="Schedule Raw">
+                                    <div style={{flex: 1 ,display: "flex" ,width: "100%", height: "100%"}}>
+                                        <ScheduleOutput raw={true} handleLoad={handleLoad} username={username} password={password} domainToUse={domainToUse} />
+                                    </div>
+                                </TabPanel>
                             </TabView>
                         </div>
                 </div>

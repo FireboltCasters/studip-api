@@ -19,7 +19,8 @@ export interface AppState{
     handleLoad,
     domainToUse,
     username,
-    password
+    password,
+    raw?: boolean
 }
 export const ScheduleOutput : FunctionComponent<AppState> = (props) => {
 
@@ -61,8 +62,13 @@ export const ScheduleOutput : FunctionComponent<AppState> = (props) => {
         setIsLoading(true);
         try{
             const client = await Connector.getClient(props?.domainToUse, props?.username, props?.password);
-            let timetable = await client.loadSchedule();
-            setTimtetable(timetable);
+            if(!!props?.raw){
+                let timetable = await client.loadScheduleRaw()
+                setTimtetable(timetable);
+            } else {
+                let timetable = await client.loadSchedule();
+                setTimtetable(timetable);
+            }
         } catch(e){
             console.log(e);
             setError(e);
@@ -78,16 +84,34 @@ export const ScheduleOutput : FunctionComponent<AppState> = (props) => {
 
     function setExampleSchedule(){
         setError(null);
-        setTimtetable(FakeBackend.getParsedExampleSchedule());
+        if(!!props?.raw){
+            setTimtetable(FakeBackend.getRawExampleSchedule());
+        } else {
+            setTimtetable(FakeBackend.getParsedExampleSchedule());
+        }
+    }
+
+    function renderUsage(){
+        if(!!props?.raw){
+            return(
+`import {Connector} from "studip-api";
+const client = await Connector.getClient(domain, username, password);
+const timetable = await client.loadScheduleRaw();`
+            )
+        } else {
+            return(
+`import {Connector} from "studip-api";
+const client = await Connector.getClient(domain, username, password);
+const timetable = await client.loadSchedule();`
+            )
+        }
     }
 
     return (
         <div style={{width: "100%", height: "100%", flexDirection: "column", display: "flex"}}>
             <Panel style={{flex: 2}} header={"Usage"} toggleable>
                 <CodeHighlight lang="js">
-{`import {Connector} from "studip-api";
-const client = await Connector.getClient(domain, username, password);
-const timetable = await client.loadSchedule();`}
+                    {renderUsage()}
                 </CodeHighlight>
             </Panel>
             <Divider />

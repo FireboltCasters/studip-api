@@ -1,6 +1,6 @@
 [
   {
-    "name": "Einführung in die Software-Entwicklung (Pulvermüller, Huning, Baumgartner)",
+    "name": "Einführung in die Software-Entwicklung (Droppelmann, Baumgartner)",
     "location": "Vorlesung",
     "building": "",
     "room": "",
@@ -10,7 +10,7 @@
     "color": "#682c8b"
   },
   {
-    "name": "Masterseminar Software Engineering (Pulvermüller, Baumgartner, Huning et al.)",
+    "name": "Masterseminar Software Engineering (Baumgartner, Droppelmann et al.)",
     "location": "Raum 50/E09",
     "building": "50",
     "room": "E09",
@@ -20,7 +20,7 @@
     "color": "#682c8b"
   },
   {
-    "name": "Einführung in die Software-Entwicklung (Pulvermüller, Huning, Baumgartner)",
+    "name": "Einführung in die Software-Entwicklung (Droppelmann, Baumgartner)",
     "location": "Vorlesung",
     "building": "",
     "room": "",
@@ -30,7 +30,7 @@
     "color": "#682c8b"
   },
   {
-    "name": "Seminar Schwerpunkt Software Engineering in der Mensch-Computer-Interaktion (Pulvermüller, Ziegenhagen, Huning et al.)",
+    "name": "Seminar Schwerpunkt Software Engineering in der Mensch-Computer-Interaktion (Ziegenhagen, Droppelmann et al.)",
     "location": "Raum 50/E09",
     "building": "50",
     "room": "E09",
@@ -50,7 +50,7 @@
     "color": "#d60000"
   },
   {
-    "name": "Einführung in die Software-Entwicklung (Pulvermüller, Huning, Baumgartner)",
+    "name": "Einführung in die Software-Entwicklung (Droppelmann, Baumgartner)",
     "location": "Übung",
     "building": "",
     "room": "",
@@ -60,7 +60,7 @@
     "color": "#682c8b"
   },
   {
-    "name": "Einführung in die Software-Entwicklung (Pulvermüller, Huning, Baumgartner)",
+    "name": "Einführung in die Software-Entwicklung (Droppelmann, Baumgartner)",
     "location": "Übung",
     "building": "",
     "room": "",
