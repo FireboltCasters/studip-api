@@ -6,10 +6,18 @@ export default class UrlHelper {
 
   // https://hilfe.studip.de/develop/Entwickler/RESTAPI
   static getUserURL(): string {
-    return UrlHelper.STUDIP_DOMAIN + UrlHelper.STUDIP_PATH_USER;
+    return UrlHelper.getUserURLByDomain(UrlHelper.STUDIP_DOMAIN);
+  }
+
+  static getUserURLByDomain(baseURL: string): string {
+    return baseURL + UrlHelper.STUDIP_PATH_USER;
   }
 
   static getScheduleURL(user_id: string): string {
-    return UrlHelper.getUserURL() + user_id + UrlHelper.STUDIP_PATH_SCHEDULE;
+    return UrlHelper.getSchedulesURLByDomain(UrlHelper.STUDIP_DOMAIN, user_id);
+  }
+
+  static getSchedulesURLByDomain(baseURL: string, user_id: string): string {
+    return UrlHelper.getUserURLByDomain(baseURL) + user_id + UrlHelper.STUDIP_PATH_SCHEDULE;
   }
 }

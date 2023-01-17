@@ -7,12 +7,14 @@ import FetchHelper from './ignoreCoverage/FetchHelper';
 export default class Connector {
   static ERROR_MAINTENANCE = 'Wartungsarbeiten';
 
+  private readonly studIpDomain: string;
   private readonly username: string;
   private readonly password: string;
   // @ts-ignore //since we can only the the client when user is found, it cant be undefined
   private user: User;
 
-  private constructor(username: string, password: string) {
+  private constructor(studIpDomain: string, username: string, password: string) {
+    this.studIpDomain = studIpDomain;
     this.username = username;
     this.password = password;
   }
@@ -23,7 +25,7 @@ export default class Connector {
     password: string
   ): Promise<Connector> {
     UrlHelper.STUDIP_DOMAIN = studIpDomain;
-    const client = new Connector(username, password);
+    const client = new Connector(studIpDomain, username, password);
     await client.login();
     return client;
   }
@@ -37,7 +39,7 @@ export default class Connector {
   }
 
   async loadUserRaw(): Promise<any> {
-    const url = UrlHelper.getUserURL();
+    const url = UrlHelper.getUserURLByDomain(this.studIpDomain);
     const headers = this.getHeaders();
     let answer = await FetchHelper.getUser(url, headers);
     this.checkIfErrorLoadingUserRaw(answer);
