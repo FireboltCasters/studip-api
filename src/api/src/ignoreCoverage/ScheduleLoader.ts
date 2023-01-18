@@ -18,6 +18,30 @@ export default class ScheduleLoader {
     return events;
   }
 
+  static parseRawStudIPEventColor(rawColor: number){
+    const defaultColor = "#d60000"; // same as color 3
+
+    switch(rawColor){
+      case 1: return "#682c8b";
+      case 2: return "#b02e7c";
+      case 3: return "#d60000"; // same as default
+      case 4: return "#f26e00";
+      case 5: return "#ffbd33";
+      case 6: return "#6ead10";
+      case 7: return "#008512";
+      case 8: return "#129c94";
+      case 9: return "#a85d45";
+      case 10: return "#a480b9";
+      case 11: return "#d082b0";
+      case 12: return "#e66666";
+      case 13: return "#f7a866";
+      case 14: return "#ffd785";
+      case 15: return "#a8ce70";
+      default: return defaultColor;
+    }
+  }
+
+
   static parseRawEventToScheduleEvent(
     weekdayIndex: number,
     rawEventAtWeekday: any
@@ -35,7 +59,7 @@ export default class ScheduleLoader {
       start: ScheduleLoader.getTimeFromStudIPTime(rawEventAtWeekday.start),
       end: ScheduleLoader.getTimeFromStudIPTime(rawEventAtWeekday.end),
       weekday: weekdayIndex,
-      color: rawEventAtWeekday.color,
+      color: ScheduleLoader.parseRawStudIPEventColor(rawEventAtWeekday.color),
     };
     return new ScheduleEvent(eventJson);
   }
